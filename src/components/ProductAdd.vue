@@ -1,27 +1,36 @@
 <script setup>
   import { reactive } from 'vue';
   const emit = defineEmits(['adicionar']);
-  const produto = reactive({
+  const informa = reactive({
     nome: '',
-    preco: '',
+    sobrenome: '',
+    senha: '',
+    confirmSenha: '',
+    dataNasc: '',
+    endereco: '',
+    cidade: '',
+    estado: '',
+    hobbies: [],
+    linguagens: '',
+    bio: ''
   });
   function salvar() {
-    if (produto.nome === '' || produto.preco === '') {
+    if (informa.senha === '' || informa.confirmSenha === '') {
       alert('Os campos nome e preço são obrigatórios');
       return;
     }
-    emit('adicionar', { ...produto });
+    emit('adicionar', { ...informa });
   }
 </script>
 <template>
   <form @submit.prevent="salvar">
     <div>
       <label for="nome">Nome</label>
-      <input type="text" id="nome" v-model="produto.nome" />
+      <input type="text" id="nome" v-model="informa.nome" />
     </div>
     <div>
       <label for="preco">Preço</label>
-      <input type="text" id="preco" v-model="produto.preco" />
+      <input type="text" id="preco" v-model="informa.preco" />
     </div>
     <button type="submit">Salvar</button>
   </form>
