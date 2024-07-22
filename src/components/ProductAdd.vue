@@ -16,11 +16,13 @@
   });
   function salvar() {
     if (informa.senha === '' || informa.confirmSenha === '') {
-      alert('Os campos nome e preço são obrigatórios');
+      alert('Os campo senha e confirmar senha são obrigadorios');
       return;
     }
     emit('adicionar', { ...informa });
   }
+
+
 </script>
 <template>
   <form @submit.prevent="salvar">

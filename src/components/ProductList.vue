@@ -169,7 +169,8 @@ const enviar = ref(true)
         <p>Estados: {{ infoma.estado }}</p>
         <p>Hobbies: {{ infoma.hobbies }}</p>
         <p>Linguagem: {{ infoma.linguagens }}</p>
-        <p>Biografia: {{ infoma.bio }}</p>
+        <p>Biografia: {{ infoma.bio }}</p>  
+        
       </div>
 
       <button
