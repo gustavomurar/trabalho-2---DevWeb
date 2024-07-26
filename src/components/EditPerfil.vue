@@ -238,7 +238,7 @@ function enviarDados() {
 
 
                         <div class="assun">
-                            <label for="">Selecione seu Estado:</label>
+                            <label for="">Estado:</label>
                             <div class="linha">
                                 <select name="estados" id="estados" class="form-control" v-model.lazy="estados.sigla">
                                     <option v-for="(item, index) in estados" :value="item" :key="index"> {{ item }}
