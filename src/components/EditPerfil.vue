@@ -115,10 +115,60 @@ const perfil = reactive({
     nascimento: '',
     endereco: '',
     hobbies: '',
-    linguagem: '',
+    linguagem:[],
     biografia: ''
 })
 
+function enviarDados() {
+    let error = false
+    if (perfil.nome == '') {
+        alert("Faltou o nome")
+        error = true
+    }
+    if (perfil.email == '') {
+        alert("Faltou o email")
+        error = true
+    }
+    if (perfil.senha == '') {
+        alert("Faltou a senha")
+        error = true
+    }
+    if (perfil.confirmSenha == '') {
+        alert("Faltou a confirmação de senha")
+        error = true
+    }
+    if (perfil.senha !== perfil.confirmSenha) {
+        alert("Senhas não conferem")
+        error = true
+    }
+    if (perfil.nascimento == '') {
+        alert("Faltou a data de nascimento")
+        error = true
+    }
+    if (perfil.endereco == '') {
+        alert("Faltou o endereço")
+        error = true
+    }
+    if (perfil.cidade == '') {
+        alert("Faltou a cidade")
+        error = true
+    }
+    if (perfil.hobbies == '') {
+        alert("Faltou o hobbies")
+        error = true
+    }
+    if (perfil.biografia == '') {
+         alert("Faltou a sua biografia")
+       error = true
+     }
+    if (perfil.estado == '') {
+        alert("Faltou o estado")
+        error = true
+    }
+    if (!error) {
+        emit('enviarAlteracoes', { ...perfil })
+    }
+}
 </script>
 <template>
   <div class="text-left">
@@ -214,34 +264,30 @@ const perfil = reactive({
                         </div>
 
                         <div class="assun">
-                            <label for="">Linguagem de programação:</label>
-                            <div class="linha">
-                                <input type="text" class="form-control" v-model="perfil.linguagem"
-                                    placeholder="Digite sua linguagem de programação">
-                            </div>
-                        </div>
-
-                        <div class="assun">
                             <label for="">Biografia:</label>
                             <div class="linha">
                                 <input type="text" class="form-control" v-model="perfil.biografia"
                                     placeholder="Digite sua biografia">
-                            </div>
+                                </div>
                         </div>
+                        <label for="linguagem">Linguagem de Programação</label>
+                        <input type="checkbox" v-model="perfil.linguagem" value="JavaScript" name="JavaScript">JavaScript
+                        <input type="checkbox" v-model="perfil.linguagem" value="C++" name="C++"> C++
+                        <input type="checkbox" v-model="perfil.linguagem" value="Java" name="Java"> Java
+                        <input type="checkbox" v-model="perfil.linguagem" value="PHP" name="PHP"> PHP
+                        <input type="checkbox" v-model="perfil.linguagem" value="Python" name="Python"> Python
 
-                        <button type="submit" id="botao" class="btn btn-primary " style="margin-top: 25px; margin-left: 35px; margin-right: 35px; margin-bottom: 30px; width:90% ;"><h5>Mostrar</h5></button>
+                        <button type="submit" id="botao" class="btn btn-primary " style="margin-top: 25px; margin-left: 35px; margin-right: 35px; margin-bottom: 30px; width:90% ;"><h5>Mostrar</h5></button>   
                     </form>
                 </div>
             </div>
-            <div class="lado text-center">
+            <div class="colLados text-center">
 
             </div>
         </div>
     </div>
 
 </template>
-
-
 <style scoped>
 .lado {
     width:27.5%;
