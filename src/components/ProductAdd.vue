@@ -44,13 +44,7 @@ const descrição = reactive ({
   biografia: ''
 })
 
-function enviarDados () {
-  let error = false 
-  if (!error) {
-    emit('mudarAlteracoes', { ...perfil })
-  }
 
-}
 </script>
 <template>
   <h1>Formulário</h1>
