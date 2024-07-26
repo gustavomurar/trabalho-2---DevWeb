@@ -1,30 +1,31 @@
 <script setup>
 import { reactive } from 'vue';
-import ProductList from '@/components/ProductList.vue';
-import ProductAdd from '@/components/ProductAdd.vue';
+import ResultPerfil from './components/ResultPerfil.vue';
+import EditPerfil from './components/EditPerfil.vue';
 
 const perfil = reactive({
-  nome: '',
-  email: '',
-  senha: '',
-  confirmSenha: '',
-  nascimento: '',
-  endereco: '',
-  estado: '',
-  hobbies: '',
-  linguagem: '',
-  biografia: ''
-});
+    nome: '',
+    email: '',
+    senha: '',
+    confirmSenha: '',
+    nascimento: '',
+    endereco: '',
+    estado: '',
+    hobbies: '',
+    linguagem: '',
+    biografia: ''
+})
 
 function salvarPerfil(novoPerfil) {
-  Object.assign(perfil, novoPerfil)
+    Object.assign(perfil, novoPerfil)
 }
-
 </script>
 
 <template>
-  <productAdd @enviarAlteracoes="salvarPerfil" />
-  <ProductList :perfil="perfil" />
+ <EditPerfil @enviarAlteracoes="salvarPerfil"/>
+ <ResultPerfil :perfil="perfil"/>
 </template>
 
-<style scoped></style>
+<style scoped>
+
+</style>
