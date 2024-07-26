@@ -3,7 +3,7 @@ import { reactive } from 'vue';
 import ProductList from '@/components/ProductList.vue';
 import ProductAdd from '@/components/ProductAdd.vue';
 
-const descrição = reactive({
+const perfil = reactive({
   nome: '',
   email: '',
   senha: '',
@@ -16,14 +16,14 @@ const descrição = reactive({
   biografia: ''
 });
 
-function salvarPerfil(NovoPerfil) {
-  Object.assign(perfil, NovoPerfil)
+function salvarPerfil(novoPerfil) {
+  Object.assign(perfil, novoPerfil)
 }
 
 </script>
 
 <template>
-  <productAdd @enviarAuteracoes="salvarPerfil" />
+  <productAdd @enviarAlteracoes="salvarPerfil" />
   <ProductList :perfil="perfil" />
 </template>
 
