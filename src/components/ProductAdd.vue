@@ -1,39 +1,58 @@
 <script setup>
-  import { reactive } from 'vue';
-  const emit = defineEmits(['adicionar']);
-  const informa = reactive({
-    nome: '',
-    sobrenome: '',
-    senha: '',
-    confirmSenha: '',
-    dataNasc: '',
-    endereco: '',
-    cidade: '',
-    estado: '',
-    hobbies: [],
-    linguagens: '',
-    bio: ''
-  });
-  function salvar() {
-    if (informa.senha === '' || informa.confirmSenha === '') {
-      alert('Os campo senha e confirmar senha são obrigadorios');
-      return;
-    }
-    emit('adicionar', { ...informa });
+import { reactive } from 'vue';
+const emit = defineEmits(['mudarAlteracoes']);
+const regiao = [
+{ name: 'AC' },
+{ name: 'AL' },
+{ name: 'AP' },
+{ name: 'AM' },
+{ name: 'BA' },
+{ name: 'CE' },
+{ name: 'DF' },
+{ name: 'PE' },
+{ name: 'PI' },
+{ name: 'RJ' },
+{ name: 'RN' },
+{ name: 'RS' },
+{ name: 'RO' },
+{ name: 'RR' },
+{ name: 'SC' },
+{ name: 'SP' },
+{ name: 'SE' },
+{ name: 'TO' },
+{ name: 'ES' },
+{ name: 'GO' },
+{ name: 'MA' },
+{ name: 'MT' },
+{ name: 'MS' },
+{ name: 'MG' },
+{ name: 'PA' },
+{ name: 'PB' },
+{ name: 'PR' },
+];
+
+const descrição = reactive ({
+  nome: '',
+  email: '',
+  senha: '',
+  confirmSenha: '',
+  nascimento: '',
+  endereco: '',
+  estado: '',
+  hobbies: '',
+  linguagem: '',
+  biografia: ''
+})
+
+function enviarDados () {
+  let error = false 
+  if (!error) {
+    emit('mudarAlteracoes', { ...perfil })
   }
 
-
+}
 </script>
 <template>
-  <form @submit.prevent="salvar">
-    <div>
-      <label for="nome">Nome</label>
-      <input type="text" id="nome" v-model="informa.nome" />
-    </div>
-    <div>
-      <label for="preco">Preço</label>
-      <input type="text" id="preco" v-model="informa.preco" />
-    </div>
-    <button type="submit">Salvar</button>
-  </form>
+  <h1>Formulário</h1>
+    
 </template>
