@@ -3,6 +3,8 @@ defineProps(['perfil'])
 </script>
 
 <template>
+    <div class="resposta">
+    <h1>Respostas</h1>
      <label for="">Nome:</label>
     <p>{{ perfil.nome }}</p>
     <label for="">Email:</label>
@@ -23,7 +25,14 @@ defineProps(['perfil'])
     <p>{{ perfil.linguagem }}</p>
     <label for="">Biografia:</label>
     <p>{{ perfil.biografia }}</p>
+</div>
 </template>
 
 <style scoped>
+.resposta{
+    background-color: rgb(208, 231, 154);
+    width: 45%;
+
+}
 </style>
+

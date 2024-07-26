@@ -115,7 +115,7 @@ const perfil = reactive({
     nascimento: '',
     endereco: '',
     hobbies: '',
-    linguagem:[],
+    linguagem: [],
     biografia: ''
 })
 
@@ -158,9 +158,9 @@ function enviarDados() {
         error = true
     }
     if (perfil.biografia == '') {
-         alert("Faltou a sua biografia")
-       error = true
-     }
+        alert("Faltou a sua biografia")
+        error = true
+    }
     if (perfil.estado == '') {
         alert("Faltou o estado")
         error = true
@@ -171,7 +171,7 @@ function enviarDados() {
 }
 </script>
 <template>
-  <div class="text-left">
+    <div class="text-left">
         <div class="row">
 
 
@@ -180,11 +180,11 @@ function enviarDados() {
             </div>
             <div class="col">
                 <div class="formulario">
-                   
+
                     <div class="text-center">
-                         <h1>Faça o Formúlaro:</h1>
+                        <h1>Faça o Formúlaro:</h1>
                     </div>
-                   
+
                     <form @submit.prevent="enviarDados">
 
                         <div class="assun">
@@ -202,29 +202,29 @@ function enviarDados() {
                                     placeholder="Digite seu email">
                             </div>
                         </div>
-                     
+
                         <div class=" text-left">
                             <div class="row">
                                 <div class="col">
-                                    
-                        <div class="assun">
-                            <label for="">Senha:</label>
-                            <div class="linha">
-                                <input type="password" class="form-control" v-model="perfil.senha"
-                                    placeholder="Digite sua senha">
-                            </div>
-                        </div>
+
+                                    <div class="assun">
+                                        <label for="">Senha:</label>
+                                        <div class="linha">
+                                            <input type="password" class="form-control" v-model="perfil.senha"
+                                                placeholder="Digite sua senha">
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col">
-                                     <div class="assun">
-                            <label for="">Confirmação de Senha:</label>
-                            <div class="linha">
-                                <input type="password" class="form-control" v-model="perfil.confirmSenha"
-                                    placeholder="Digite sua senha">
-                            </div>
-                        </div>
+                                    <div class="assun">
+                                        <label for="">Confirmação de Senha:</label>
+                                        <div class="linha">
+                                            <input type="password" class="form-control" v-model="perfil.confirmSenha"
+                                                placeholder="Digite sua senha">
+                                        </div>
+                                    </div>
                                 </div>
-                                
+
                             </div>
                         </div>
 
@@ -241,7 +241,8 @@ function enviarDados() {
                             <label for="">Estado:</label>
                             <div class="linha">
                                 <select name="estados" id="estados" class="form-control" v-model.lazy="estados.sigla">
-                                    <option v-for="(estado, index) in estados" :key="index" :value="estado.sigla">                                        {{ estado.nome }}
+                                    <option v-for="(estado, index) in estados" :key="index" :value="estado.sigla"> {{
+                                        estado.nome }}
                                         {{ estado.sigla }}
                                     </option>
                                 </select>
@@ -269,16 +270,20 @@ function enviarDados() {
                             <div class="linha">
                                 <input type="text" class="form-control" v-model="perfil.biografia"
                                     placeholder="Digite sua biografia">
-                                </div>
+                            </div>
                         </div>
-                        <label for="linguagem">Linguagem de Programação</label>
-                        <input type="checkbox" v-model="perfil.linguagem" value="JavaScript" name="JavaScript">JavaScript
-                        <input type="checkbox" v-model="perfil.linguagem" value="C++" name="C++"> C++
-                        <input type="checkbox" v-model="perfil.linguagem" value="Java" name="Java"> Java
-                        <input type="checkbox" v-model="perfil.linguagem" value="PHP" name="PHP"> PHP
-                        <input type="checkbox" v-model="perfil.linguagem" value="Python" name="Python"> Python
 
-                        <button type="submit" id="botao" class="btn btn-primary " style="margin-top: 25px; margin-left: 35px; margin-right: 35px; margin-bottom: 30px; width:90% ;"><h5>Mostrar</h5></button>   
+                        <div class="assun">
+                        <label for="linguagem">Linguagem de Programação</label>
+                        <input type="checkbox" v-model="perfil.linguagem" value="JavaScript">JavaScript
+                        <input type="checkbox" v-model="perfil.linguagem" value="C++" name="C++"> C++
+                        <input type="checkbox" v-model="perfil.linguagem" value="Python" name="Python"> Python
+                        </div>
+
+                        <button type="submit" id="botao" class="btn btn-primary "
+                            style="margin-top: 25px; margin-left: 35px; margin-right: 35px; margin-bottom: 30px; width:90% ;">
+                            <h5>Mostrar</h5>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -291,7 +296,7 @@ function enviarDados() {
 </template>
 <style scoped>
 .lado {
-    width:27.5%;
+    width: 27.5%;
 }
 
 .assun {
@@ -300,12 +305,16 @@ function enviarDados() {
 
 .col {
     width: 45%;
+    background-color: rgba(255, 255, 114, 0.767);
+
 }
 
 .linha select,
 input {
-    width: 100%;
+    width: 98%;
     height: 5vh;
     border: .1px solid;
+
 }
+
 </style>
